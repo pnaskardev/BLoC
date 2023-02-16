@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concepts/features/home/bloc/cubit/counter_cubit.dart';
 import 'package:flutter_bloc_concepts/features/home/screens/home_page.dart';
 
-void main() {
+void main() 
+{
   runApp(const MyApp());
 }
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp
       (
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData
         (
           useMaterial3: true,
