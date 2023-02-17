@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_concepts/features/second-screen/screen/second_screen.dart';
-import 'package:flutter_bloc_concepts/features/third_screen/screens/third_screen.dart';
 import 'package:flutter_bloc_concepts/logic/counter_cubit/counter_cubit.dart';
 
-class HomeScreen extends StatelessWidget 
+class SecondScreen extends StatelessWidget 
 {
-  static const routeName='/';
-  const HomeScreen({super.key, required this.title,required this.color});
+  static const routeName='/secondScreen';
+  const SecondScreen({super.key, required this.title,required this.color});
   final String title;
   final Color color;
   @override
@@ -96,38 +94,13 @@ class HomeScreen extends StatelessWidget
               (
                 onPressed: ()
                 {
-                  Navigator.of(context).push
-                  (
-                    MaterialPageRoute
-                    (
-                      builder: (secondScreenContext)=>BlocProvider.value
-                      (
-                        value: BlocProvider.of<CounterCubit>(context),
-                        child: const SecondScreen
-                        (
-                          title: 'Second Screen',color: Colors.blueAccent,
-                        ),
-                      )
-                    )
-                  );
+                  Navigator.of(context).pop();
                 }, 
-                child: const Text('Go to second screen')
-              ),
-              ElevatedButton
-              (
-                onPressed: ()
-                {
-                  Navigator.of(context).pushNamed
-                  (
-                    ThirdScreen.routeName
-                  );
-                }, 
-                child: const Text('Go to third screen')
+                child: const Text('Go back')
               )
             ],
           ),
         ),
-         // This trailing comma makes auto-formatting nicer for build methods.
       ),
     );
   }
